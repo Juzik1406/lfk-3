@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Цифровий освітній ресурс — ЛФК при протезуванні нижніх кінцівок</title>
+  <meta name="description" content="Цифровий освітній ресурс: ЛФК при протезуванні нижніх кінцівок. Теорія, вправи до/після протезування, навчання ходьбі та самостійне життя." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+  <style>
+    :root{
+      --bg0:#f6fbff;
+      --bg1:#eaf6ff;
+      --card:#ffffff;
+      --text:#0b1b2b;
+      --muted:#49627a;
+      --primary:#1f87ff;
+      --primary2:#33b3ff;
+      --accent:#00d0ff;
+      --border:rgba(31,135,255,.18);
+      --shadow: 0 12px 30px rgba(12, 68, 120, .10);
+      --radius: 18px;
+      --max: 1120px;
+      --focus: 0 0 0 3px rgba(31,135,255,.35);
+    }
+
+    *{box-sizing:border-box}
+
+html, body { height: 100%; }
+
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1000px 420px at 20% 0%, rgba(51,179,255,.22), transparent 60%),
+    radial-gradient(900px 520px at 80% 10%, rgba(31,135,255,.18), transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg0) 40%, #ffffff 100%);
+  line-height:1.55;
+}
+
+button, input, textarea, select, summary, details{
+  font-family: inherit;
+}
+
+    a{color:inherit; text-decoration:none}
+    a:focus, button:focus, summary:focus, input:focus { outline:none; box-shadow: var(--focus); border-radius:12px; }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 16px 64px;}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(246,251,255,.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar{
+      max-width:var(--max); margin:0 auto; padding: 12px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 240px;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 10px 24px rgba(31,135,255,.22);
+      position:relative;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius:10px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.2));
+      mix-blend-mode: overlay;
+    }
+    .brand h1{font-size:14px; margin:0; letter-spacing:.2px}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+
+    nav{
+      display:flex; flex-wrap:wrap;
+      gap:10px; justify-content:flex-end;
+    }
+    .chip{
+      padding:8px 10px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      display:inline-flex; align-items:center; gap:8px;
+      cursor:pointer;
+    }
+    .chip:hover{transform: translateY(-1px); background:#fff; border-color: rgba(31,135,255,.30); color:#1a3a57}
+    .chip .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: linear-gradient(180deg, var(--accent), var(--primary));
+    }
+
+    .hero{
+      padding: 34px 0 14px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr; padding-top:22px;}
+      .brand{min-width:auto;}
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{padding: 22px 22px 20px;}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(31,135,255,.08);
+      border: 1px solid rgba(31,135,255,.18);
+      color:#144268;
+      font-size: 13px;
+    }
+    .kicker svg{opacity:.9}
+    .hero h2{
+      margin: 12px 0 8px;
+      font-size: clamp(22px, 2.4vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -.3px;
+    }
+    .hero p{margin: 0 0 16px; color: var(--muted); font-size: 15px; max-width: 62ch;}
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
+    .btn{
+      border:none;
+      padding: 10px 14px;
+      border-radius: 14px;
+      cursor:pointer;
+      font-weight: 650;
+      font-size: 14px;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .btn.primary{
+      color:white;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 12px 22px rgba(31,135,255,.20);
+    }
+    .btn.primary:hover{transform: translateY(-1px); box-shadow: 0 16px 28px rgba(31,135,255,.26);}
+    .btn.ghost{
+      background: rgba(255,255,255,.8);
+      border: 1px solid var(--border);
+      color:#144268;
+    }
+    .btn.ghost:hover{transform: translateY(-1px); background:#fff;}
+
+    .hero-side{padding: 18px;}
+    .statgrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(31,135,255,.06), rgba(255,255,255,.85));
+    }
+    .stat strong{display:block; font-size: 22px; letter-spacing:-.2px;}
+    .stat span{color:var(--muted); font-size: 13px;}
+    .note{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(31,135,255,.28);
+      background: rgba(31,135,255,.05);
+      color:#144268;
+      font-size: 13px;
+    }
+
+    section{margin-top: 18px;}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin: 18px 0 10px;
+    }
+    .section-head h3{margin:0; font-size: 18px; letter-spacing:-.2px;}
+    .section-head p{margin:0; color: var(--muted); font-size: 13px;}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .col-6{grid-column: span 6;}
+    .col-4{grid-column: span 4;}
+    .col-8{grid-column: span 8;}
+    .col-12{grid-column: span 12;}
+    @media (max-width: 980px){
+      .col-6,.col-4,.col-8{grid-column: span 12;}
+    }
+
+    .panel{padding: 16px;}
+    .panel h4{margin:0 0 6px; font-size: 16px;}
+    .panel p{margin:0; color: var(--muted); font-size: 14px;}
+
+    .list{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.75);
+    }
+    .badge{
+      min-width: 26px; height:26px; border-radius: 10px;
+      background: rgba(31,135,255,.10);
+      border: 1px solid rgba(31,135,255,.18);
+      display:flex; align-items:center; justify-content:center;
+      color:#144268; font-weight:800; font-size: 13px;
+      margin-top: 1px;
+    }
+
+    details{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.78);
+      padding: 10px 12px;
+    }
+    details + details{margin-top:10px;}
+    summary{
+      cursor:pointer;
+      font-weight: 700;
+      color:#144268;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none;}
+    .chev{transition: transform .14s ease;}
+    details[open] .chev{transform: rotate(180deg);}
+    .accordion-body{color: var(--muted); margin-top: 10px; font-size: 14px;}
+
+    .tools{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+    }
+    .tools label{font-size: 13px; color: var(--muted);}
+    .search{
+      flex: 1 1 220px;
+      display:flex; align-items:center; gap:10px;
+      border:1px solid var(--border);
+      background:#fff;
+      padding: 10px 12px;
+      border-radius: 14px;
+    }
+    .search input{
+      width:100%;
+      border:none;
+      font-size: 14px;
+      outline:none;
+    }
+    .pill{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(31,135,255,.06);
+      cursor:pointer;
+      font-size: 13px;
+      color:#144268;
+      user-select:none;
+    }
+
+    footer{
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+      clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+.hero-illus{
+  width:100%;
+  border-radius:16px;
+  border:1px solid rgba(31,135,255,.18);
+  background: linear-gradient(180deg, rgba(31,135,255,.10), rgba(255,255,255,.85));
+  padding:12px;
+}
+
+.illus-caption{
+  margin-top:10px;
+  font-size:13px;
+  color:#49627a;
+  text-align:center;
+}
+
+.module{
+  position:relative;
+  overflow:hidden;
+}
+
+.module::after{
+  content: attr(data-emoji);
+  position:absolute;
+  right:-8px;
+  top:-12px;
+  font-size:88px;
+  opacity:.12;
+  transform: rotate(10deg);
+  pointer-events:none;
+}
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+p, li, span, div {
+  font-weight: 400;
+}
+
+strong, b {
+  font-weight: 600;
+}
+.video-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+  margin-top:12px;
+}
+
+.video{
+  position:relative;
+  width:100%;
+  aspect-ratio: 16 / 9;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:#000;
+}
+
+.video iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand" aria-label="Назва ресурсу">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Цифровий освітній ресурс</h1>
+        <p>ЛФК при протезуванні нижніх кінцівок</p>
+      </div>
+    </div>
+
+    <nav aria-label="Навігація">
+      <a class="chip" href="#about"><span class="dot"></span>Про ресурс</a>
+      <a class="chip" href="#structure"><span class="dot"></span>Структура</a>
+      <a class="chip" href="#modules"><span class="dot"></span>Модулі</a>
+      <a class="chip" href="#materials"><span class="dot"></span>Матеріали</a>
+      <a class="chip" href="#contacts"><span class="dot"></span>Контакти</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="top">
+<div class="kicker" role="note" aria-label="Для конкурсу цифрового освітнього ресурсу">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z"
+          stroke="currentColor" stroke-width="2"/>
+    <path d="M8 8h8M8 12h8M8 16h5"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  Для конкурсу цифрового освітнього ресурсу
+</div>
+        <!-- simple icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      
+     </div>
+
+      <h2>Навчання + реабілітація: ЛФК при протезуванні нижніх кінцівок</h2>
+      <p>
+        Ресурс допомагає сформувати та відновити рухові компетентності після ампутації:
+        від теоретичних основ — до практики вправ, навичок користування протезом та навчання ходьбі.
+      </p>
+
+      <div class="actions">
+        <button class="btn primary" id="btnStart" type="button">
+          Почати з модуля 1
+          <span aria-hidden="true">→</span>
+        </button>
+        <a class="btn ghost" href="#structure">
+          Переглянути структуру
+          <span aria-hidden="true">▾</span>
+        </a>
+      </div>
+    </div>
+
+    <aside class="card hero-side" aria-label="Коротко про ресурс">
+<div class="hero-illus" aria-hidden="true">
+  <svg viewBox="0 0 520 320" width="100%" height="auto">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#1f87ff"/>
+        <stop offset="1" stop-color="#33b3ff"/>
+      </linearGradient>
+    </defs>
+
+    <!-- фон -->
+    <circle cx="130" cy="120" r="90" fill="rgba(31,135,255,.15)"/>
+    <circle cx="420" cy="80" r="70" fill="rgba(31,135,255,.12)"/>
+
+    <!-- людина -->
+    <circle cx="220" cy="90" r="28" fill="#0b1b2b"/>
+    <rect x="195" y="120" width="50" height="80" rx="18" fill="#0b1b2b"/>
+
+    <!-- нога -->
+    <line x1="210" y1="200" x2="195" y2="270" stroke="#0b1b2b" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- протез -->
+    <line x1="235" y1="200" x2="255" y2="265" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="255" cy="265" r="8" fill="url(#g1)"/>
+  </svg>
+</div>
+
+<div class="illus-caption">
+  Реабілітація • ЛФК • протезування
+</div>
+      <div class="statgrid">
+        <div class="stat">
+          <strong>5</strong>
+          <span>навчальних модулів</span>
+        </div>
+        <div class="stat">
+          <strong>ЛФК</strong>
+          <span>теорія + практика</span>
+        </div>
+        <div class="stat">
+          <strong>Інклюзія</strong>
+          <span>доступність та підтримка</span>
+        </div>
+        <div class="stat">
+          <strong>Навички</strong>
+          <span>протез + ходьба</span>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Мета:</b> формування та відновлення рухових компетентностей через цифрові засоби ЛФК.
+      </div>
+    </aside>
+  </section>
+
+  <section id="about">
+    <div class="section-head">
+      <h3>Про ресурс</h3>
+      <p>актуальність · мета · завдання</p>
+    </div>
+
+    <div class="grid">
+      <div class="card panel col-6">
+        <h4>Актуальність</h4>
+        <p>
+          Зростає кількість осіб з ампутаціями нижніх кінцівок, тому потрібні сучасні цифрові ресурси,
+          які поєднують навчання та реабілітацію.
+        </p>
+      </div>
+
+      <div class="card panel col-6">
+        <h4>Мета</h4>
+        <p>
+          Формування та відновлення рухових компетентностей у осіб після ампутації нижніх кінцівок
+          шляхом використання цифрових засобів лікувальної фізичної культури.
+        </p>
+      </div>
+
+      <div class="card panel col-12">
+        <h4>Завдання</h4>
+        <ul class="list" id="taskList">
+          <li class="li"><span class="badge">1</span><div><b>Теоретичні знання з ЛФК</b><div class="muted">Короткі пояснення, правила безпеки, протипоказання.</div></div></li>
+          <li class="li"><span class="badge">2</span><div><b>Правильне виконання вправ</b><div class="muted">Покрокові інструкції, контроль техніки.</div></div></li>
+          <li class="li"><span class="badge">3</span><div><b>Навички користування протезом</b><div class="muted">Посадка/зняття, догляд, типові помилки.</div></div></li>
+          <li class="li"><span class="badge">4</span><div><b>Соціалізація та самостійність</b><div class="muted">Побутові сценарії, впевненість у русі.</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="structure">
+    <div class="section-head">
+      <h3>Структура цифрового ресурсу</h3>
+      <p>5 модулів — від теорії до самостійного життя</p>
+    </div>
+
+    <div class="card panel">
+      <div class="tools" aria-label="Пошук та фільтр модулів">
+        <div class="search" role="search">
+          <span aria-hidden="true">🔎</span>
+          <label class="sr-only" for="q">Пошук по модулях</label>
+          <input id="q" type="search" placeholder="Пошук: теорія, до протезування, ходьба..." />
+        </div>
+        <span class="pill" data-filter="all">Усі</span>
+        <span class="pill" data-filter="theory">Теорія</span>
+        <span class="pill" data-filter="pre">До протезування</span>
+        <span class="pill" data-filter="prost">Протезування</span>
+        <span class="pill" data-filter="post">Після протезування</span>
+        <span class="pill" data-filter="walk">Ходьба</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="modules">
+    <div class="section-head">
+      <h3>Модулі</h3>
+      <p>короткий зміст + приклади матеріалів</p>
+    </div>
+
+    <div class="grid" id="moduleGrid">
+      <!-- Module 1 -->
+      <article class="card panel col-12 module" data-tags="theory" data-emoji="📘">
+        <h4>1. Теоретичні основи</h4>
+        <p>Пояснення: що таке ЛФК, принципи дозування навантаження, безпека, самоконтроль.</p>
+        <div class="accordion-body">
+  <b>Пам’ятка: Техніка безпеки при виконанні ЛФК</b><br/><br/>
+
+  • <b>Попередня консультація:</b> Завжди узгоджуйте комплекс вправ з лікарем або фізичним терапевтом.<br/>
+  • <b>Обов’язкова розминка:</b> Починайте заняття з 5-10 хвилин розминки для підготовки м'язів та суглобів.<br/>
+  • <b>Поступовість:</b> Навантаження збільшуйте плавно, починаючи з 15-20 хвилин і поступово збільшуючи до 30-40 хвилин.<br/>
+  • <b>Контроль дихання:</b> Дихайте ритмічно, не затримуйте повітря. Зусилля зазвичай роблять на видиху.<br/>
+  • <b>Відсутність болю:</b> Вправи не повинні викликати гострого болю. Якщо відчуваєте біль — зменште амплітуду або припиніть вправу.<br/>
+  • <b>Техніка виконання:</b> Нові вправи виконуйте повільно, зосереджуючись на правильній техніці, а не на швидкості.<br/>
+  • <b>Одяг та місце:</b> Займайтеся у зручному одязі, що не обмежує рухів, у провітреному приміщенні на рівній поверхні (килимок).<br/>
+  • <b>Сигнали тіла:</b> Якщо з'явилася задишка, запаморочення, серцебиття — припиніть заняття.<br/>
+  • <b>Завершення:</b> Закінчуйте тренування спокійними вправами на розслаблення та відновлення дихання.<br/>
+  • <b>Регулярність — запорука успіху:</b> краще займатися 2-3 рази на тиждень потроху, ніж один раз занадто інтенсивно.
+</div>
+            </div>
+         </article>
+
+      <!-- Module 2 -->
+      <article class="card panel col-12 module" data-tags="pre" data-emoji="🎥">
+        <h4>2. ЛФК до протезування</h4>
+        <p>Підготовка до протезування: зміцнення м’язів, рухливість, профілактика контрактур.</p>
+<div class="accordion-body">
+  <div class="video-grid">
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/aFaW6bgoDwg"
+        title="ЛФК до протезування 1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/pDEF5h5HheY"
+        title="ЛФК до протезування 2"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/r_63FH_QVD4"
+        title="ЛФК до протезування 3"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/c8n5EXqNetc"
+        title="ЛФК до протезування 4"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/JvI9iBkREOs"
+        title="ЛФК до протезування 5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</div>          </details>
+        </div>
+      </article>
+
+      <!-- Module 3 -->
+      <article class="card panel col-12 module" data-tags="prost" data-emoji="🦿">
+        <h4>3. Протезування</h4>
+       <p>
+  Підготовка кукси до протезування включає щоденну гігієну, догляд за шкірою, компресію
+  (бинтування або лайнери) для формування циліндричної форми, десенсибілізацію та мобілізацію рубця.
+  Мета — зменшити набряк, запобігти контрактурам і підготувати шкіру до навантажень.
+</p>
+        <div class="accordion-body">
+  <b>Основні етапи підготовки кукси:</b><br/><br/>
+
+  • <b>Гігієна та догляд за шкірою:</b> Мийте куксу щодня м'яким милом, ретельно просушуйте.
+  Регулярно зволожуйте шкіру засобами без запаху.<br/><br/>
+
+  • <b>Компресійна терапія (формування кукси):</b> Використовуйте еластичні бинти (техніка «вісімка»)
+  або силіконові/гелеві лайнери для зменшення набряку та надання правильної форми.<br/><br/>
+
+  • <b>Десенсибілізація:</b> Після загоєння рани 2-3 рази на день масажуйте куксу, поступово змінюючи
+  матеріали від м'яких до більш жорстких для зменшення чутливості.<br/><br/>
+
+  • <b>Мобілізація рубця:</b> Обережно зміщуйте шкіру навколо рубця в різні боки, щоб запобігти спайкам.<br/><br/>
+
+  • <b>Фізичні вправи та положення:</b> Уникайте тривалого згинання кукси, частіше тримайте її в розпрямленому положенні.
+  Виконуйте вправи для зміцнення м'язів (наприклад, натискання куксою на подушку).<br/><br/>
+
+  • <b>Захист:</b> Використовуйте захисні засоби для профілактики подразнень.
+  Обов'язково щодня оглядайте шкіру (можна з дзеркалом). При почервоніннях, пошкодженнях або сильному болю — зверніться до спеціаліста.<br/><br/>
+
+
+  <b>Відео:</b>
+  <div class="video-grid" style="margin-top:10px;">
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/nK1ZRYXS1xI"
+        title="Підготовка кукси до протезування" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- Module 4 -->
+      <article class="card panel col-12 module" data-tags="post" data-emoji="🧘">
+        <h4>4. ЛФК після протезування</h4>
+        <p>Адаптація до протеза: координація, баланс, поступове збільшення навантаження.</p>
+        <div class="accordion-body">
+  <b></b><br/><br/>
+
+  <b>1) Дихальні вправи</b><br/>
+  • <b>Глибоке дихання:</b> вдих носом → затримка 2-3 с → повільний видих ротом. Повторіть 10 разів.<br/>
+  • <b>Діафрагмальне дихання:</b> рука на живіт, вдих — «надути», видих — «втягнути». 10 повторень.<br/><br/>
+
+  <b>2) Профілактика контрактур та гнучкість</b><br/>
+  • <b>Розтяжка кульшового суглоба:</b> лежачи на животі, притисніть культю, 15-20 с × 5 разів.<br/>
+  • <b>Задня поверхня стегна:</b> сидячи, нахил вперед до стопи, 15-20 с × 3-5 повторень.<br/>
+  • <b>Згиначі стегна:</b> лежачи на спині, притисніть ногу до грудей, 20 с × 3 повторення на сторону.<br/><br/>
+
+  <b>3) Зміцнення м’язів</b><br/>
+  • <b>Напруження м’язів стегна:</b> 5-7 с напруга → розслаблення, 10-15 разів.<br/>
+  • <b>Підйом здорової ноги:</b> затримка 5 с, 10-12 повторень.<br/>
+  • <b>Місток:</b> затримка 5-10 с, 8-12 разів.<br/>
+  • <b>Маятник кульшею:</b> 10 повторень.<br/>
+  • <b>Підйом тазу (стабілізація):</b> 10 с, 5-7 повторень.<br/><br/>
+
+  <b>4) Баланс та рівновага</b><br/>
+  • <b>Стояння на одній нозі:</b> 10-20 с, 3-5 разів.<br/>
+  • <b>Перенесення ваги:</b> 10-15 повторень.<br/>
+  • <b>Ходьба на місці:</b> 20 повторень.<br/>
+  • <b>Присідання з опорою:</b> 8-10 разів.<br/><br/>
+
+  <b>5) Підготовка до протезування</b><br/>
+  • <b>Звикання до навантаження на культю:</b> 5-7 разів.<br/>
+  • <b>Баланс на двох точках:</b> 10 повторень.<br/>
+  • <b>Рівновага з закритими очима:</b> 10 с, 3 повторення.<br/><br/>
+
+  <b>6) Координація та адаптація</b><br/>
+  • <b>Ходьба з уявним навантаженням:</b> 15 м вперед-назад.<br/>
+  • <b>Повороти тулуба:</b> 10 разів у кожен бік.<br/>
+  • <b>Моделювання кроку:</b> 15 повторень.
+</div>
+             <b> • Вправи на рівновагу біля опори<b>
+
+              • Перенесення ваги тіла з контролем пози<b>
+              • Рухи в суглобах у безпечному діапазоні
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- Module 5 -->
+      <article class="card panel col-12 module" data-tags="walk" data-emoji="🏠">
+        <h4>5. Навчання ходьбі та самостійне життя</h4>
+        <p>
+  Самостійне життя після протезування — реальна мета. Її досягають через регулярну реабілітацію,
+  догляд за куксою та протезом, тренування ходи, баланс і психологічну адаптацію.
+
+</p>
+       <div class="accordion-body">
+  <b>Відео (Модуль 5):</b>
+
+  <div class="video-grid" style="margin-top:10px;">
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/k6ANPE8MpAA"
+        title="Самостійне життя після протезування" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <b>Ключові аспекти адаптації та самостійності:</b><br/>
+  • <b>Догляд за куксою:</b> щоденне миття, огляд шкіри, зволоження, профілактика інфекцій та грибка.<br/>
+  • <b>Догляд за протезом:</b> щоденне протирання гнізда, обережність із шарнірами, звернення до фахівців при поломках.<br/>
+  • <b>Фізична реабілітація:</b> зміцнення м’язів, баланс, координація, тренування ходи для профілактики падінь.<br/>
+  • <b>Повсякденна активність:</b> поступове повернення до справ, використання милиць/ходунків на старті, безпечний простір вдома.<br/>
+  • <b>Психологічний стан:</b> мотивація та підтримка пришвидшують адаптацію.<br/><br/>
+  • <b>Важливо:
+  • </b> навчитися самостійно одягати/знімати протез і доглядати за ним, не перевантажувати ногу на початку
+  та регулярно відвідувати реабілітолога для корекції протеза.
+</div>
+            </div>
+          </details>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="materials">
+    <div class="section-head">
+      <h3>Матеріали для конкурсу</h3>
+      <p></p>
+    </div>
+
+    <div class="grid">
+      <div class="card panel col-4">
+        <h4>Відео/анімації</h4>
+        <p>Короткі демонстрації техніки вправ + нагадування про безпеку.</p>
+      </div>
+      <div class="card panel col-4">
+        <h4>Інтерактив</h4>
+        <p>Чек-листи, тести, “відмітити виконано”, збереження прогресу.</p>
+      </div>
+      <div class="card panel col-4">
+        <h4>Доступність</h4>
+        <p>Великий шрифт, контраст, зрозумілі іконки, навігація з клавіатури.</p>
+      </div>
+
+      <div class="card panel col-12">
+        <h4>Педагогічна цінність</h4>
+        <p>
+          Ресурс реалізує компетентнісний підхід, підтримує інклюзивність та формує практичні навички
+          разом із цифровою грамотністю.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="section-head">
+      <h3>Контакти</h3>
+      
+    </div>
+
+    <footer class="card" style="padding:16px;">
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:flex-start;">
+        <div style="flex:1 1 260px;">
+          <b>Автор / заклад:</b><br/>
+          <span style="color:var(--muted)">Кухарик І.П, Гімназія №15 Смілянської міської ради Черкаської області"</span>
+        </div>
+        <div style="flex:1 1 260px;">
+          <b>[email]/{[телефон]}:</b><br/>
+          <span style="color:var(--muted)">lakunya2407@gmail.com, 0632780331</span>
+        </div>
+        <div style="flex:1 1 260px;">
+          <b>Примітка:</b><br/>
+          <span style="color:var(--muted)">Матеріал має навчальний характер. Рекомендовано виконувати під наглядом фахівця.</span>
+        </div>
+      </div>
+      <div style="margin-top:12px; color:var(--muted);">
+        © <span id="year"></span> Цифровий освітній ресурс 
+      </div>
+    </footer>
+  </section>
+</main>
+
+<script>
+  // Smooth start
+  document.getElementById("btnStart").addEventListener("click", () => {
+    const first = document.querySelector('[data-tags="theory"]');
+    first?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Filter + Search
+  const pills = Array.from(document.querySelectorAll(".pill"));
+  const q = document.getElementById("q");
+  const modules = Array.from(document.querySelectorAll(".module"));
+
+  let activeFilter = "all";
+
+  function apply(){
+    const text = (q.value || "").trim().toLowerCase();
+
+    modules.forEach(m => {
+      const tags = (m.dataset.tags || "");
+      const matchesFilter = (activeFilter === "all") || tags.includes(activeFilter);
+      const hay = (m.innerText || "").toLowerCase();
+      const matchesText = !text || hay.includes(text);
+
+      m.style.display = (matchesFilter && matchesText) ? "" : "none";
+    });
+  }
+
+  pills.forEach(p => {
+    p.addEventListener("click", () => {
+      activeFilter = p.dataset.filter;
+      pills.forEach(x => x.style.outline = "none");
+      p.style.outline = "2px solid rgba(31,135,255,.35)";
+      apply();
+    });
+  });
+
+  q.addEventListener("input", apply);
+
+  // Default highlight
+  pills[0].style.outline = "2px solid rgba(31,135,255,.35)";
+</script>
+</body>
+</html>
